@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chessboard.w1", "Chessboard.w1\Chessboard.w1.csproj", "{E07D6E6A-6AF1-40D1-AA42-62275B8B8EF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFScheduler", "WPFScheduler\WPFScheduler.csproj", "{0A91C42F-DAE0-48E4-82AB-5E727BD9AB0D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E07D6E6A-6AF1-40D1-AA42-62275B8B8EF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E07D6E6A-6AF1-40D1-AA42-62275B8B8EF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E07D6E6A-6AF1-40D1-AA42-62275B8B8EF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E07D6E6A-6AF1-40D1-AA42-62275B8B8EF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A91C42F-DAE0-48E4-82AB-5E727BD9AB0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A91C42F-DAE0-48E4-82AB-5E727BD9AB0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A91C42F-DAE0-48E4-82AB-5E727BD9AB0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A91C42F-DAE0-48E4-82AB-5E727BD9AB0D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
