@@ -116,10 +116,9 @@ namespace WPFScheduler.ViewModels
             get { return currentDate; }
             set
             {
-                bool isPositive = currentDate.Date < value.Date;
+                SelectedData = Loader.Instance.FilterData(SelectedData, currentDate, value, Range);
                 currentDate = value;
                 OnPropertyChanged("CurrentDate");
-                SelectedData = Loader.Instance.FilterData(isPositive, SelectedData, CurrentDate, Range);
             }
         }
         private int range;
@@ -168,7 +167,6 @@ namespace WPFScheduler.ViewModels
             set { headers = value; OnPropertyChanged("Headers"); }
         }
         #endregion
-
         #region Commands
         #region IncreaseDate
         private RelayCommand increaseDateCommand;
@@ -205,7 +203,6 @@ namespace WPFScheduler.ViewModels
         }
         #endregion
         #endregion
-
         #region Methods
         private void CreateHeaders()
         {
@@ -243,8 +240,6 @@ namespace WPFScheduler.ViewModels
             Msg = string.Format("{0}", size.ToString());
         }
         #endregion
-       
-
         #region Singleton
 
         private static readonly ViewModelBase instance = new ViewModelBase();
@@ -264,7 +259,6 @@ namespace WPFScheduler.ViewModels
         }
 
         #endregion
-
         #region INotifyProperty
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -277,11 +271,5 @@ namespace WPFScheduler.ViewModels
             }
         }
         #endregion
-
-
-
-        
     }
-
-   
 }

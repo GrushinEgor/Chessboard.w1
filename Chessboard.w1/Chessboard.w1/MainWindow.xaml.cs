@@ -43,14 +43,16 @@ namespace Chessboard.w1
 
                 lastDate = lastDate.AddDays(rd.Next(10) - rd.Next(10));
                 lastDur = rd.Next(5) + 1;
-                items.Add(new MyClass() { Name = i.ToString(), Duration = lastDur, Date = lastDate, Room = j + 1 });
+                //items.Add(new MyClass() { Name = i.ToString(), Duration = lastDur, Date = lastDate, Room = j + 1 });
                 if (j == 25)
                     z = -1;
                 if (j == 0)
                     z = 1;
                 j += z;
             }
-            items.Add(new MyClass() { Name = "Name", Duration = 3, Date = new DateTime(2014, 9, 3), Room = 0 });
+            items.Add(new MyClass() { Name = "Name", Duration = 35, Date = new DateTime(2014, 9, 15), Room = 1 });
+            items.Add(new MyClass() { Name = "Name", Duration = 10, Date = new DateTime(2014, 9, 17), Room = 2 });
+            items.Add(new MyClass() { Name = "Name", Duration = 10, Date = new DateTime(2014, 9, 20), Room = 3 });
             scheduler.Items = items;
             DebugList = new ObservableCollection<ISchedulerItemData>();
             foreach (var item in items)

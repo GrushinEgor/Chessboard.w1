@@ -19,9 +19,9 @@ namespace WPFScheduler
         protected Loader() { }
         private List<ISchedulerItemData> originalSource;
 
-
-        public ObservableCollection<ISchedulerItemData> FilterData(bool isPositive, ObservableCollection<ISchedulerItemData> sortableSource, DateTime filterDate, int availbleRange)
+        public ObservableCollection<ISchedulerItemData> FilterData(ObservableCollection<ISchedulerItemData> sortableSource, DateTime oldDate, DateTime newDate, int availbleRange)
         {
+            var isPositiveDirection = oldDate.Date > newDate.Date;
             ObservableCollection<ISchedulerItemData> selectedData = null;
             if (originalSource != null && originalSource.Count != 0)
             {
@@ -30,13 +30,14 @@ namespace WPFScheduler
                 bool isChanged = false;
                 foreach (var item in sortableSource)
                     tempList.Add(item);
+
                 int i = sortableSource.Count != 0 ? originalSource.IndexOf(sortableSource[sortableSource.Count - 1]) : currentOutsideIndex;
 
-                if (isPositive)
+                if (isPositiveDirection)
                 {
-                    while (i <= originalSource.Count - 1 && originalSource[i].Date.Date < filterDate.AddDays(availbleRange).Date)
+                    while (i <= originalSource.Count - 1 && originalSource[i].Date.Date < newDate.AddDays(availbleRange).Date)
                     {
-                        if (originalSource[i].Date.AddDays(originalSource[i].Duration - 1).Date >= filterDate.Date && !tempList.Contains(originalSource[i]))
+                        if (originalSource[i].Date.AddDays(originalSource[i].Duration - 1).Date >= newDate.Date && !tempList.Contains(originalSource[i]))
                         {
                             tempList.Add(originalSource[i]);
                             isChanged = true;
@@ -46,7 +47,7 @@ namespace WPFScheduler
                     i = 0;
                     while (i < tempList.Count)
                     {
-                        if (tempList[i].Date.AddDays(tempList[i].Duration).Date < filterDate.Date)
+                        if (tempList[i].Date.AddDays(tempList[i].Duration).Date < newDate.Date)
                         {
                             listToRemove.Add(tempList[i]);
                             isChanged = true;
@@ -56,10 +57,10 @@ namespace WPFScheduler
                 }
                 else
                 {
-                    while (i >= 0 && originalSource[i].Date.Date >= filterDate.AddDays(-maxDuration).Date)
+                    while (i >= 0 && originalSource[i].Date.Date >= newDate.AddDays(-maxDuration).Date)
                     {
-                        if (originalSource[i].Date.AddDays(originalSource[i].Duration).Date >= filterDate.Date &&
-                            originalSource[i].Date.Date < filterDate.AddDays(availbleRange).Date)
+                        if (originalSource[i].Date.AddDays(originalSource[i].Duration).Date >= newDate.Date &&
+                            originalSource[i].Date.Date < newDate.AddDays(availbleRange).Date)
                         {
                             if (!tempList.Contains(originalSource[i]))
                             {
@@ -74,7 +75,7 @@ namespace WPFScheduler
                     i = tempList.Count - 1;
                     while (i >= 0)
                     {
-                        if (tempList[i].Date.Date > filterDate.AddDays(availbleRange - 1).Date)
+                        if (tempList[i].Date.Date > newDate.AddDays(availbleRange - 1).Date)
                         {
                             listToRemove.Add(tempList[i]);
                             isChanged = true;
@@ -116,18 +117,21 @@ namespace WPFScheduler
                 currentOutsideIndex = 0;
                 selectedData = new ObservableCollection<ISchedulerItemData>();
                 maxDuration = source[source.Count - 1].Duration;
+
                 foreach (var item in source)
                 {
-                    if (item.Date.Date > filterDate.AddDays(availbleRange - 1).Date && !isFounded)
+                    if (!isFounded && item.Date.Date > filterDate.AddDays(availbleRange - 1).Date)
                     {
                         currentOutsideIndex = source.IndexOf(item);
                         isFounded = true;
                     }
+
                     if (item.Date.Date < filterDate.AddDays(availbleRange).Date
                         && item.Date.AddDays(item.Duration).Date >= filterDate.Date)
                     {
                         selectedData.Add(item);
                     }
+
                     if (item.Duration > maxDuration)
                         maxDuration = item.Duration;
                 }

@@ -22,3 +22,15 @@ D:\Programming\Chessboard.w1\WPFScheduler\obj\Debug\WPFScheduler.Properties.Reso
 D:\Programming\Chessboard.w1\WPFScheduler\obj\Debug\WPFScheduler.csproj.GenerateResource.Cache
 D:\Programming\Chessboard.w1\WPFScheduler\obj\Debug\WPFScheduler.dll
 D:\Programming\Chessboard.w1\WPFScheduler\obj\Debug\WPFScheduler.pdb
+D:\Programming\Chessboard.w1\Repository\Chessboard.w1\WPFScheduler\bin\Debug\WPFScheduler.dll
+D:\Programming\Chessboard.w1\Repository\Chessboard.w1\WPFScheduler\bin\Debug\WPFScheduler.pdb
+D:\Programming\Chessboard.w1\Repository\Chessboard.w1\WPFScheduler\obj\Debug\WPFScheduler.csprojResolveAssemblyReference.cache
+D:\Programming\Chessboard.w1\Repository\Chessboard.w1\WPFScheduler\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Programming\Chessboard.w1\Repository\Chessboard.w1\WPFScheduler\obj\Debug\WPFScheduler_MarkupCompile.cache
+D:\Programming\Chessboard.w1\Repository\Chessboard.w1\WPFScheduler\obj\Debug\WPFScheduler_MarkupCompile.lref
+D:\Programming\Chessboard.w1\Repository\Chessboard.w1\WPFScheduler\obj\Debug\Themes\Generic.baml
+D:\Programming\Chessboard.w1\Repository\Chessboard.w1\WPFScheduler\obj\Debug\WPFScheduler.g.resources
+D:\Programming\Chessboard.w1\Repository\Chessboard.w1\WPFScheduler\obj\Debug\WPFScheduler.Properties.Resources.resources
+D:\Programming\Chessboard.w1\Repository\Chessboard.w1\WPFScheduler\obj\Debug\WPFScheduler.csproj.GenerateResource.Cache
+D:\Programming\Chessboard.w1\Repository\Chessboard.w1\WPFScheduler\obj\Debug\WPFScheduler.dll
+D:\Programming\Chessboard.w1\Repository\Chessboard.w1\WPFScheduler\obj\Debug\WPFScheduler.pdb
